@@ -3,7 +3,10 @@
 - 软件版本：22.1.9.63
 - 硬件版本：A1
 
+开发记录： https://github.com/haruki1953/240627-router-control-script-dev/tree/master/240627-router-control-script-dev
+
 ## 安装依赖
+
 在运行脚本之前，请确保安装所有依赖项。运行以下命令：
 ```sh
 pnpm install
