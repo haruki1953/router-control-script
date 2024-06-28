@@ -10,6 +10,13 @@ pnpm install
 ```
 
 ## 使用方法
+
+### 配置config.ts
+
+将根目录下的 config.ts.example 重命名为 config.ts，进行配置
+
+[config.ts.example](config.ts.example) 
+
 ### 运行脚本
 你可以通过以下命令运行脚本并传递命令参数：
 ```sh
@@ -21,13 +28,3 @@ ts-node index.ts <命令>
 - `<WiFi 名称>`：桥接指定的 WiFi 网络
 
 WiFi信息须在 `config.ts` 配置
-```ts
-export const wifiDict = {
-  name: {
-    // MAC地址
-    bssid: '00%3A00%3A00%3A00%3A00%3A00',
-    ssid: 'name',
-    password: '12121212'
-  }
-}
-```

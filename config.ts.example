@@ -1,0 +1,24 @@
+// 路由器密码
+export const routerConfig = {
+  username: 'admin',
+  password: '123456'
+}
+
+// 路由器地址
+export const axiosConfig = {
+  baseUrl: 'http://192.168.2.1',
+  timeout: 5000
+}
+
+// 可桥接的wifi
+export const wifiDict = {
+  // name即为命令参数
+  name: {
+    // MAC地址
+    bssid: '00%3A00%3A00%3A00%3A00%3A00',
+    // wifi名称、密码
+    ssid: 'ssid',
+    password: '12121212'
+  },
+  // ...
+}
