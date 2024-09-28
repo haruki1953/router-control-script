@@ -35,10 +35,20 @@ function isWifiName(arg: any): arg is WifiName {
     console.log(`正在重启`)
 
   } else if (isWifiName(args[0])) {
-    // 桥接
-    const wifiInfo = wifiDict[args[0]]
-    await wispService(stok, wifiInfo)
-    console.log(`正在桥接 ${wifiInfo.ssid}`)
+    let isSucess = false
+    while (!isSucess) {
+      // 桥接
+      const wifiInfo = wifiDict[args[0]]
+      await wispService(stok, wifiInfo)
+        .catch(async () => {
+          console.log(`桥接失败，重试中`)
+          await new Promise((resolve) => setTimeout(resolve, 5000))
+        })
+        .then(() => {
+          console.log(`正在桥接 ${wifiInfo.ssid}`)
+          isSucess = true
+        })
+    }
 
   } else {
     console.log(`命令无效`)
